@@ -86,6 +86,66 @@ const fetchData = async () => {
             name: 'Tote Cure Time',
             department: 'Rubbermold',
             link: ''
+        },
+        {
+            id:14,
+            name: 'WO Scanning Tool',
+            department: 'Repair Clamps',
+            link: ''
+        },
+        {
+            id:15,
+            name: 'Data Tool',
+            department: 'Repair Clamps',
+            link: ''
+        },
+        {
+            id:16,
+            name: 'WO Scanning Tool',
+            department: 'Yokes',
+            link: ''
+        },
+        {
+            id:17,
+            name: 'Production Board',
+            department: 'ICB',
+            link: ''
+        },
+        {
+            id:18,
+            name: 'Live Chart Data',
+            department: 'MTConnect',
+            link: ''
+        },
+        {
+            id:19,
+            name: 'Machine TBH',
+            department: 'MTConnect',
+            link: ''
+        },
+        {
+            id:20,
+            name: 'Machine TBH (BRN)',
+            department: 'MTConnect',
+            link: ''
+        },
+        {
+            id:21,
+            name: 'Hold / Deviation Tool',
+            department: 'QA Tools',
+            link: ''
+        },
+        {
+            id:22,
+            name: 'CAR Tool',
+            department: 'QA Tools',
+            link: ''
+        },
+        {
+            id:22,
+            name: 'Project Management (Coming)',
+            department: 'QA Tools',
+            link: ''
         }
     ] )
 }

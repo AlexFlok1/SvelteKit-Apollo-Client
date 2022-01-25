@@ -2,9 +2,12 @@
 
     //imports
     import { allTools } from '../stores/toolsDataStore'
+    import { loginWindow } from '../stores/store'
 
     const name: string = 'Web Tools'
     const header: string = 'Mueller Cleveland Web Tools'
+    //init reactive variable
+    $: toogleLogin = false
 
     const departments = new Set<string>( $allTools.map( el => el.department ) )
     let selectedDepartment:string = ''
@@ -14,7 +17,26 @@
         console.log(( selectedDepartment === dep ) ? '' : dep)
     }
 
+    const closeLogin = ( e ) => {
+        if( e.srcElement.parentNode.parentNode.id === 'LOGIN-WINDOW' )
+            loginWindow.update( prev => false )
+    }
+
+    //writeable listneres
+    loginWindow.subscribe( data => toogleLogin = data )
+
 </script>
+
+<style>
+    #LOGIN-WINDOW{
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        background: rgba(0,0,0,.4);
+    }
+</style>
 
 <svelte:head>
     <title>{header}</title>
@@ -59,4 +81,17 @@
         </div>
     </div>
 
+    <div id='LOGIN-WINDOW'  on:click={( e ) => { closeLogin( e ) }}>
+        <div class=" grid grid-cols-1 h-full">
+            <div class="h-full flex justify-center items-center">
+                <div class="w-2/6 h-2/6 bg-white p-3 rounded-md shadow-lg">
+                    <span class="w-full text-xl p-4 block text-center font-semibold">Login</span>
+                    <input class="w-3/6 block rounded sm"  type="text" placeholder="Badge #" />
+                    <button class="">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </main>
+<!--class="{ toogleLogin ? 'block' : 'hidden' }"-->
